@@ -13,9 +13,11 @@ export class AppComponent {
 
   constructor(securityService: SecurityService, usersService: UsersService) {
     securityService.login('admin', '123')
-      .subscribe(value => {
-        usersService.getActiveUser().subscribe(user => console.log(user))
-      })
+      .subscribe(logged => {
+        if (logged) {
+          usersService.getActiveUser().subscribe(user => console.log(user))
+        }
+      }, () => console.log(false))
   }
 
 }

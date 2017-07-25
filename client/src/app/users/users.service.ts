@@ -1,18 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class UsersService {
 
-  private activeUserUrl = 'http://localhost:8080/api-v1/users/active';
-
-  constructor(private http: Http) {
+  constructor(private http: Http, @Inject('config') private config) {
   }
 
   getActiveUser(): Observable<any> {
-    return this.http.get(this.activeUserUrl)
+    return this.http.get(this.config.api.activeUser)
       .map(response => response.json())
   }
 
