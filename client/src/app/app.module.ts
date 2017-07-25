@@ -6,14 +6,21 @@ import { UsersModule } from './users/users.module';
 import { SecurityService } from './users/security.service';
 import { UsersService } from './users/users.service';
 import { Api } from './api';
+import { LoginformComponent }from './register/loginform/loginform.component';
+import {FormsModule} from '@angular/forms';
+import {routerModule} from './app.routing';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginformComponent
   ],
   imports: [
     BrowserModule,
-    UsersModule
+    UsersModule,
+    FormsModule,
+    //SecurityModule,
+    routerModule
   ],
   providers: [
     SecurityService,
