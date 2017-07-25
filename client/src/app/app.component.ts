@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {SecurityService} from "./users/security.service";
-import {UsersService} from './users/users.service';
+import {UsersService} from "./users/users.service";
 
 @Component({
   selector: 'app-root',
@@ -11,16 +11,11 @@ export class AppComponent {
 
   title = 'app';
 
-  constructor(securityService: SecurityService, userService: UsersService) {
-    securityService.events.subscribe(value =>{
-      console.log(value)
-      userService.getActiveUser()
-        .subscribe(user => console.log(user))
-    })
-
-
+  constructor(securityService: SecurityService, usersService: UsersService) {
     securityService.login('admin', '123')
-
+      .subscribe(value => {
+        usersService.getActiveUser().subscribe(user => console.log(user))
+      })
   }
 
 }
