@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
 import { SecurityService } from './users/security.service';
 import { UsersService } from './users/users.service';
-import config from './config';
+import { Api } from './api';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import config from './config';
   providers: [
     SecurityService,
     UsersService,
-    { provide: 'config', useValue: config }
+    Api
   ],
   bootstrap: [AppComponent]
 })
