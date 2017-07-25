@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {UsersModule} from './users/users.module';
 import {SecurityService} from './users/security.service';
-import {requestOptionsProvider} from "./users/DefaultRequestOptions";
+import {UsersService} from './users/users.service';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {requestOptionsProvider} from "./users/DefaultRequestOptions";
     UsersModule
   ],
   providers: [
-    SecurityService
+    SecurityService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })
