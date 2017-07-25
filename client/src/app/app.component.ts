@@ -12,7 +12,6 @@ export class AppComponent {
 
   constructor(securityService: SecurityService) {
     securityService.login('admin', '123')
-      .subscribe(response => console.log(response))
 
   }
 

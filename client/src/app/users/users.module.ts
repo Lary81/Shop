@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -9,4 +10,3 @@ import {HttpModule} from '@angular/http';
   declarations: []
 })
 export class UsersModule { }
-
