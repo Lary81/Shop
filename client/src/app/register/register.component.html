@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+</head>
+<body>
+<div class="card book-form-card" *ngIf="edited != null">
+  <label>Nazwa/Imię i Nazwisko</label><br>
+  <input type="text" [(ngModel)]="edited.edition"><br>
+  <label>Adres</label><br>
+  <input type="text" [(ngModel)]="edited.name"><br>
+  <label>Login</label><br>
+  <input type="text" [(ngModel)]="edited.ilustrator"><br>
+  <label>Hasło</label><br>
+  <input type="text" [(ngModel)]="edited.rarity"><br>
+
+
+  <div class="form-group">
+    <button class="btn" (click)="cancel()">Cancel</button>
+    <button class="btn btn-success" (click)="save()">Save</button>
+  </div>
+</div>
+</body>
+</html>
