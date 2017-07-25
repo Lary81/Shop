@@ -4,7 +4,6 @@ import { Subject} from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { Api } from '../api';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mapTo';
 import 'rxjs/add/operator/do';
 
 @Injectable()
@@ -18,13 +17,12 @@ export class SecurityService {
     this.events = this.authenticationEvents.asObservable()
   }
 
-  login(username: string, password: string): Observable<boolean> {
+  login(username: string, password: string): Observable<string> {
     let payload = this.preparePayload(username, password)
     return this.http.post(this.api.oauthServer, payload)
       .map(response => response.json())
       .map(json => json.access_token)
       .do(token => this.onLoginSuccess(token))
-      .mapTo(true)
   }
 
   logout() {
@@ -32,13 +30,13 @@ export class SecurityService {
     this.authenticationEvents.next(false)
   }
 
+  private removeAuthorizationHeader() {
+    this.requestOptions.headers.delete('Authorization')
+  }
+
   private onLoginSuccess(token: string) {
     this.setAuthorizationToken(token)
     this.authenticationEvents.next(true)
-  }
-
-  private removeAuthorizationHeader() {
-    this.requestOptions.headers.delete('Authorization')
   }
 
   private setAuthorizationToken(token: string) {
