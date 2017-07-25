@@ -20,7 +20,8 @@ export class SecurityService {
   login(username: string, password: string): Observable<boolean> {
     let payload = this.preparePayload(username, password)
     return this.http.post(this.config.api.oauthServer, payload)
-      .map(response => response.json().access_token)
+      .map(response => response.json())
+      .map(json => json.access_token)
       .do(token => this.onLoginSuccess(token))
       .mapTo(true)
   }
