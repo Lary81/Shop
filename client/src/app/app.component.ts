@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {SecurityService} from "./users/security.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'app';
+
+  constructor(securityService: SecurityService) {
+    securityService.login('admin', '123')
+      .subscribe(response => console.log(response))
+
+  }
+
 }
