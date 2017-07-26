@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { SecurityService } from '../security.service';
-import { Router } from '@angular/router';
+import {Component} from '@angular/core';
+import {SecurityService} from '../security.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login-form',
@@ -20,7 +20,9 @@ export class LoginFormComponent {
   login() {
     this.pendingRequest = true
     this.securityService.login(this.username, this.password)
-      .subscribe(() => this.router.navigateByUrl("/"), () => {
+      .subscribe(() => {
+        this.router.navigateByUrl('')
+      }, () => {
         this.loginError = true
         this.pendingRequest = false
       })

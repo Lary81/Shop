@@ -6,6 +6,11 @@ security:
   oauth2:
     resource:
       filter-order: 3
+server:
+  ssl:
+    key-store: classpath:keystore.jks
+    key-store-password: password
+    key-password: password
 ---
 spring:
   profiles: production
