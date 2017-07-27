@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-self-made',
+  selector: 'self-made',
   templateUrl: './self-made.component.html',
   styleUrls: ['./self-made.component.css']
 })

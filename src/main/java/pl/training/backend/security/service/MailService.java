@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import pl.training.backend.security.entity.User;
 
 
-    @Service
+   // @Service
     public class MailService {
 
-        @Autowired
+     //   @Autowired
         private MailSender mailSender;
 
 

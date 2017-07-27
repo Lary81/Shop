@@ -33,7 +33,8 @@ public class OAuth2 {
                     .antMatchers(PUBLIC_URIS).permitAll()
                     .antMatchers(POST, USERS_URI).permitAll()
                     .antMatchers(GET, ACTIVE_USER_URI).authenticated()
-                    .antMatchers(ALL_URIS).hasRole(Role.ADMIN.name());
+                    .antMatchers(ALL_URIS).permitAll();
+//                    .antMatchers(ALL_URIS).hasRole(Role.ADMIN.name());
         }
 
     }

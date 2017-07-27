@@ -1,0 +1,24 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+
+    <property name="host" value="poczta.interia.pl"/>
+    <property name="username" value="gryzipiorka@interia.pl"/>
+
+    <property name="port" value="465"/>
+
+    <property name="javaMailProperties">
+        <props>
+            <prop key="mail.smtp.auth">true</prop>
+            <prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+            <prop key="mail.smtp.socketFactory.fallback">false</prop>
+        </props>
+    </property>
+
+</bean>
+
+</beans>

@@ -7,10 +7,17 @@ import {Api} from './api';
 import {SecurityGuard} from './security/security.guard';
 import {SecurityService} from './security/security.service';
 import {routerModule} from './app.routing';
+import { ProductComponent } from './shop/products/product/product.component';
+import { ShopComponent } from './shop/shop/shop.component';
+import {ProductsService} from './shop/products/products.service';
+import {SelfMadeComponent} from './self-made/self-made.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductComponent,
+    ShopComponent,
+    SelfMadeComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +28,8 @@ import {routerModule} from './app.routing';
   providers: [
     Api,
     SecurityService,
-    SecurityGuard
+    SecurityGuard,
+    ProductsService
   ],
   bootstrap: [AppComponent]
 })

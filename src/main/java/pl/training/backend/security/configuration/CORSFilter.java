@@ -18,7 +18,7 @@ import static org.springframework.http.HttpHeaders.*;
 public class CORSFilter implements Filter {
 
     private static final String ALLOWED_ORIGINS = "http://localhost:4200";
-    private static final String ALLOWED_METHODS = "*";
+    private static final String ALLOWED_METHODS = "GET,POST,PUT, DELETE";
     private static final String ALLOWED_HEADERS = "Origin, X-Requested-With, Content-Type, Accept, Authorization";
     private static final String MAX_AGE = "3600";
 

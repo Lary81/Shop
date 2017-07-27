@@ -26,6 +26,10 @@ public class User implements Serializable, UserDetails {
     private String login;
     @Column(nullable = false)
     private String password;
+    private String email;
+
+
+
     private boolean active;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<Authority> authorities = new HashSet<>();
@@ -43,11 +47,11 @@ public class User implements Serializable, UserDetails {
     public String getPassword() {
         return password;
     }
-    @Override
+
     public String getNazwa() {
         return nazwa;
     }
-    @Override
+
     public int getTelefon() {
         return telefon;
     }
@@ -76,5 +80,7 @@ public class User implements Serializable, UserDetails {
     public boolean isEnabled() {
         return active;
     }
-
+    public String getEmail() {
+        return email;
+    }
 }

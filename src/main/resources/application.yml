@@ -1,4 +1,9 @@
 spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: kruszek81
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -6,18 +11,20 @@ security:
   oauth2:
     resource:
       filter-order: 3
-server:
+
   ssl:
     key-store: classpath:keystore.jks
     key-store-password: password
     key-password: password
+server:
+  port: 8443
 ---
 spring:
   profiles: production
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/training
-    username: lukaszandrzejewski
+    username: postgres
   jpa:
     hibernate:
       ddl-auto: update
