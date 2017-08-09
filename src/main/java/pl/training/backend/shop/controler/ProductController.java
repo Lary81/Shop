@@ -33,11 +33,18 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity createProduct(@ApiParam(name = "product") @RequestBody ProductDTO productDTO) {
         Products products = mapper.map(productDTO, Products.class);
-        productService.addProduct(productDTO);
+        productService.addProduct(products);
         URI uri = uriBuilder.requestUriWithId(products.getId());
         return created(uri).build();
     }
 
+    @RequestMapping(method = RequestMethod.PUT)
+    public ResponseEntity editProduct(@ApiParam(name = "products") @RequestBody ProductDTO productDTO) {
+        Products products = mapper.map(productDTO, Products.class);
+        productService.editProduct(products);
+        URI uri = uriBuilder.requestUriWithId(products.getId());
+        return created(uri).build();
+    }
     @ApiOperation(value = "Get current product", response = ProductDTO.class)
     @RequestMapping(value = "active", method = RequestMethod.GET)
     public ProductDTO getProduct(OAuth2Authentication authentication) {

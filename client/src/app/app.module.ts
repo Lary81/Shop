@@ -11,25 +11,35 @@ import { ProductComponent } from './shop/products/product/product.component';
 import { ShopComponent } from './shop/shop/shop.component';
 import {ProductsService} from './shop/products/products.service';
 import {SelfMadeComponent} from './self-made/self-made.component';
+import {RegisterComponent} from './register/register.component';
+import {FormsModule} from '@angular/forms';
+import { ShoppingCartComponent } from './shoppingCart/shopping-cart/shopping-cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
     ShopComponent,
-    SelfMadeComponent
+    SelfMadeComponent,
+    RegisterComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
     SecurityModule,
     UsersModule,
-    routerModule
+    routerModule,
+    FormsModule
   ],
   providers: [
     Api,
     SecurityService,
     SecurityGuard,
     ProductsService
+  ],
+  exports: [
+    RegisterComponent,
+    ShoppingCartComponent
   ],
   bootstrap: [AppComponent]
 })

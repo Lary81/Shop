@@ -1,24 +1,23 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-
-</head>
-<body>
-<div class="card book-form-card" *ngIf="edited != null">
-  <label>Nazwa/Imię i Nazwisko/Nazwa</label><br>
-  <input type="text" [(ngModel)]="edited.edition"><br>
+<div>
+  <h1>Zarejestruj się:</h1>
+</div>
+<div class="card book-form-card reg">
+  <label>Nazwa/Imię i Nazwisko</label><br>
+  <input type="text" [(ngModel)]="edited.name"><br>
   <label>Adres</label><br>
   <input type="text" [(ngModel)]="edited.name"><br>
   <label>Login</label><br>
   <input type="text" [(ngModel)]="edited.ilustrator"><br>
   <label>Hasło</label><br>
   <input type="text" [(ngModel)]="edited.rarity"><br>
-
+<label>Email</label><br>
+  <input type="email"><br>
+  <label>Phone Number</label><br>
+  <input type="text">
 
   <div class="form-group">
     <button class="btn" (click)="cancel()">Cancel</button>
-    <button class="btn btn-success" (click)="save()">Save</button>
+    <button class="btn " (click)="save()">Save</button>
+
   </div>
 </div>
-</body>
-</html>

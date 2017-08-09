@@ -1,20 +1,23 @@
-
-<div class="container">
+<div class="container-fluid mypage">
 
 
   <nav>
     <a routerLink="/">Main</a> |
     <a routerLink="products">Sklep</a> |
     <a routerLink="self-made">SelfMade</a> |
-    <a routerLink="login">Kontakt</a>
+    <a routerLink="cart">Kontakt</a>
   </nav>
-  <br>
-  <h1>
-    Welcome to Gryzipiórka!
-  </h1>
+  <nav class="navbar-right">
+    <a routerLink="register">Register</a>
+    <a routerLink="login">Login</a>
+  </nav>
+  <div>
+    <br>
+    <h1>
+      Welcome to Gryzipiórka!
+    </h1>
+  </div>
 </div>
-
-
 
 
 <router-outlet></router-outlet>

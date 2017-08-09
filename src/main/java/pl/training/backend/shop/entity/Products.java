@@ -19,14 +19,15 @@ public class Products implements Serializable{
     private int quantity;
 
     private String properities;
-//    @OneToMany
-//    @JoinColumn
-//    @Column(name="pictures")
-//    private List<Pictures>piclist;
+    @OneToMany
+    @JoinColumn
+    @Column(name="pictures")
+    private List<Pictures>piclist;
+    @Column
+    private Object unitPrice;
 
 
-
-
-
-
+    public Object getUnitPrice() {
+        return unitPrice;
+    }
 }

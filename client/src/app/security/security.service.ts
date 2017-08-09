@@ -87,5 +87,29 @@ export class SecurityService {
     sessionStorage.removeItem(this.tokenKey)
     this.requestOptions.headers.delete(this.authorizationHeader)
   }
+  register(username: string, password: string) {
+    const payload = this.prepareRegisterPayload(username, password);
+    this.http.post('http://localhost:8080/api-v1/users', {
+      login: username,
+      password: password
+    }).
+    subscribe(response => console.log(response));
+    // return this.http.get(this.api.oauthServer, payload);
+  }
 
+  private preparePayload(username: string, password: string): URLSearchParams {
+    const payload = new URLSearchParams();
+    payload.set('username', username);
+    payload.set('password', password);
+    payload.set('grant_type', 'password');
+    payload.set('client_id', 'connect-app');
+    return payload;
+  }
+
+  private prepareRegisterPayload(username: string, password: string): URLSearchParams {
+    const payload = new URLSearchParams();
+    payload.set('username', username);
+    payload.set('password', password);
+    return payload;
+  }
 }

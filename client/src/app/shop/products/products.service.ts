@@ -41,7 +41,9 @@ export class ProductsService {
   update(product: any): Observable<any> {
     return this.http.put(`${this.baseUrl}/${product.id}`, product)
   }
-
+// addToCart(product: any):Observable<any>{
+//     return this.http.put(`${this.baseUrl}/${product.id}`, product)
+//}
 }
 
 

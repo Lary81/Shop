@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import pl.training.backend.common.model.Mapper;
-//@ImportResource ("classpath:mail.xml")
+@ImportResource ("classpath:mail.xml")
 
 @Configuration
 public class CommonBeans {

@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import {SecurityService} from '../security/security.service';
+import {Router} from '@angular/router';
+
+
 
 @Component({
-  selector: 'app-register',
+  selector: 'register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent  {
 
-  constructor() { }
+  username: string;
+  password: string;
+  registerError: boolean;
+  pendingRequest = false;
 
-  ngOnInit() {
+  constructor(private securityService: SecurityService, private router: Router) {
   }
 
-}
+  register() {
+    this.pendingRequest = true;
+    this.securityService.register(this.username, this.password)
+  }}

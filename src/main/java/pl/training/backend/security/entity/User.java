@@ -20,12 +20,13 @@ public class User implements Serializable, UserDetails {
     private Long id;
     @Column(nullable = false)
     private String nazwa;
-    @Column(nullable = false)
+    @Column
     private int telefon;
     @Column(nullable = false)
     private String login;
     @Column(nullable = false)
     private String password;
+    @Column
     private String email;
 
 

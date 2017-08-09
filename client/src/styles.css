@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-
+  margin-left:2%;
   background-image: url("../../../spring-angular-base/client/src/assets/images/tlo.jpg");
+}
+.mypage {
+
+margin-right: 10%;
 }

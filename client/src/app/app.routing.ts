@@ -4,6 +4,8 @@ import {SecurityGuard} from './security/security.guard';
 import {UsersListComponent} from './users/users-list/users-list.component';
 import {ProductComponent} from './shop/products/product/product.component';
 import {SelfMadeComponent} from './self-made/self-made.component';
+import {RegisterComponent} from './register/register.component';
+import {ShoppingCartComponent} from './shoppingCart/shopping-cart/shopping-cart.component';
 
 const routesConfig: [Route] = [
   {
@@ -20,6 +22,12 @@ const routesConfig: [Route] = [
     },
     {
       path: 'self-made', component: SelfMadeComponent
+    },
+    {
+      path: 'register', component: RegisterComponent
+    },
+    {
+      path: 'cart', component: ShoppingCartComponent
     }
   ]
   }

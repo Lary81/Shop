@@ -20,7 +20,7 @@ public class ProductService {
 @Autowired
 private ProductsRepository productsRepository;
 
-    public ProductDTO editProduct(ProductDTO productDTO)  {
+    public void  editProduct(Products productDTO)  {
         Products products = productsRepository.findOne(productDTO.getId());
         Products product = new Products();
         product.setId(productDTO.getId());
@@ -30,18 +30,15 @@ private ProductsRepository productsRepository;
          List<Pictures> piclist;
 
         productsRepository.save(products);
-        return productDTO;
+
     }
 
 
 
-    public ProductDTO addProduct(ProductDTO productDto)  {
+    public void  addProduct(Products products)  {
 
+    productsRepository.saveAndFlush(products);
 
-
-
-
-        return null;
     }
 
 

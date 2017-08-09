@@ -26,6 +26,10 @@ export class ProductComponent  {
        this.prod = response.products
      })
   }
-
+  // addToCart(products) {
+  //    this.productsService.addToCart(products)
+  //   console.log(this.quantity)
+  //   this.cartStore.addToCart(products, this.quantity || 1)
+  // }
 
 }
